@@ -1,34 +1,16 @@
 name: Github Actions Demo
 on: 
   push:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
-      environment:
-        description: 'Environment to run tests against'
-        type: choice
-        options:
-          - dev
-          - prod
+
 jobs:
   Demo-Github-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: "Init"
-        run: echo "🚀 Github actions demo! 🎉"
+      - name: Lint
+        run: echo "Linting code base"
 
-      - name: Print workflow inputs
-        run: | 
-          echo "Log Level: $LEVEL"
-          echo "Env: $ENV"
-        env:
-          LEVEL: ${{ inputs.logLevel }}
-          ENV: ${{ inputs.environment }}
+      - name: Test
+        run: echo "Running unit tests"
+
+      - name: Security
+        run: echo "Running static code analysis tools" 
