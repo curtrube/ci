@@ -1,7 +1,25 @@
 name: Github Actions Demo
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
 jobs:
   Demo-Github-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🚀 Github actions demo! 🎉"
+      - name: "Init"
+        run: echo "🚀 Github actions demo! 🎉"
+
+      - name: Log level
+        run: | 
+          echo "Log Level: $LEVEL"
+        env:
+          LEVEL: ${{ inputs.logLevel }}
