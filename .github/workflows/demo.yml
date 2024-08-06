@@ -1,7 +1,0 @@
-name: Github Actions Demo
-on: workflow_dispatch
-jobs:
-  Demo-Github-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🚀 Github actions demo! 🎉"

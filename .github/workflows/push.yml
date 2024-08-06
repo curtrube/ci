@@ -1,0 +1,17 @@
+name: Github Actions Demo
+on: 
+  push:
+
+jobs:
+  Push:
+    name: static code analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint
+        run: echo "Linting code base"
+
+      - name: Test
+        run: echo "Running unit tests"
+
+      - name: Security
+        run: echo "Running static code analysis tools" 
