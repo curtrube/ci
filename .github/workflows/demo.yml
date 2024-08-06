@@ -1,5 +1,6 @@
 name: Github Actions Demo
 on: 
+  push:
   workflow_dispatch:
     inputs:
       logLevel:
@@ -11,6 +12,12 @@ on:
         - info
         - warning
         - debug
+      environment:
+        description: 'Environment to run tests against'
+        type: choice
+        options:
+          - dev
+          - prod
 jobs:
   Demo-Github-Actions:
     runs-on: ubuntu-latest
