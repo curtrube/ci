@@ -25,8 +25,10 @@ jobs:
       - name: "Init"
         run: echo "🚀 Github actions demo! 🎉"
 
-      - name: Log level
+      - name: Print workflow inputs
         run: | 
           echo "Log Level: $LEVEL"
+          echo "Env: $ENV"
         env:
           LEVEL: ${{ inputs.logLevel }}
+          ENV: ${{ inputs.environment }}
