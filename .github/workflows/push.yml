@@ -3,7 +3,8 @@ on:
   push:
 
 jobs:
-  Demo-Github-Actions:
+  Push:
+    name: static code analysis
     runs-on: ubuntu-latest
     steps:
       - name: Lint
