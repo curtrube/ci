@@ -18,3 +18,8 @@ jobs:
 
       - name: Security
         run: echo "Running static code analysis tools" 
+      
+      - name: Dump github context
+        run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
